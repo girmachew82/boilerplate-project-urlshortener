@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+app.use(express.urlencoded({extended:false}))
 // Basic Configuration
 const port = process.env.PORT || 3000;
 
@@ -18,7 +19,11 @@ app.get('/', function(req, res) {
 app.get('/api/hello', function(req, res) {
   res.json({ greeting: 'hello API' });
 });
+// URL shortener
+app.post('api/shorturl', function(req, res){
+  res.json(req.body)
 
+})
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);
 });
