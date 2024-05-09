@@ -20,7 +20,7 @@ app.get('/api/hello', function(req, res) {
   res.json({ greeting: 'hello API' });
 });
 // URL shortener
-app.post('api/shorturl', function(req, res){
+app.post('api/shorturl', (req, res)=>{
   res.json(req.body)
 
 })
