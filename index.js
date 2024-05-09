@@ -55,7 +55,7 @@ app.post('/api/shorturl/:shorturl', (req, res)=>{
      return res.json({
        "error":"No Short URL for the given input"
      })
-  }
+  }else
  res.redirect(originalUrls[foundIndex])
  
  })
