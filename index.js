@@ -56,10 +56,7 @@ app.post('/api/shorturl:shorturl', (req, res)=>{
        "error":"No Short URL for the given input"
      })
   }
-  return res.json({
-   original_url: url,
-   short_url: shortUrls[foundIndex]
- })
+ res.redirect(originalUrls[foundIndex])
  
  })
 app.listen(port, function() {
